@@ -1,0 +1,1 @@
+The Web Programming Word Guessing Game is a simple browser-based game where users guess scrambled web programming-related words. The game tracks the number of correctly guessed words and continues until the player has guessed all the words in the provided list. This game helps players test their knowledge of programming-related terms in a fun and interactive way.
