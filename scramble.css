@@ -16,7 +16,7 @@ input{
     font-size: 15px;
 }
 
-.restart{
+.retry{
     background: hsl(248, 94%, 49%);
     cursor: pointer;
     border: none;

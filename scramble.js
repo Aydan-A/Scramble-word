@@ -77,10 +77,7 @@ let webProgrammingwords = [
 
   reTry.addEventListener("click", () => {
     score.innerHTML=""
-    let word =
-      webProgrammingwords[
-        Math.floor(Math.random() * webProgrammingwords.length)
-      ];
+    let word = webProgrammingwords[Math.floor(Math.random() * webProgrammingwords.length)];
     let arrayword = word.split("");
     mixtheArray(arrayword);
     scramble.innerHTML = arrayword.join(" ").toLowerCase();
