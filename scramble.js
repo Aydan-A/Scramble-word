@@ -70,48 +70,64 @@ let webProgrammingwords = [
   "CSRF",
 ];
 
-  let webProgrammingwordsCopy=[...webProgrammingwords];
-  let RandomWord = webProgrammingwordsCopy[Math.floor(Math.random() * webProgrammingwords.length)];
+let wordsYouKnew = 0;
+let RandomWord, arrayword;
 
-  let arrayword = RandomWord.split("");
+let webProgrammingwordsCopy = [...webProgrammingwords];
 
-  reTry.addEventListener("click", () => {
-    score.innerHTML=""
-    let word = webProgrammingwords[Math.floor(Math.random() * webProgrammingwords.length)];
-    let arrayword = word.split("");
-    mixtheArray(arrayword);
-    scramble.innerHTML = arrayword.join(" ").toLowerCase();
-  });
-
-  checkButton.addEventListener("click", () => {
-    let inputValue = input.value.toLowerCase().split("");
-    let arrayword = word.toLowerCase().split("");
-
-    inputValue.forEach((letter, index) => {
-      if ((letter === arrayword[index])) {
-        wordsYouKnew++
-      } else {
-        score.innerHTML = `Try again`;
-      }
-    });
-    if (wordsYouKnew === arrayword.length) {
-      score.innerHTML = `You guessed the entire word!`;
-    } else {
-      score.innerHTML = `You know ${wordsYouKnew} letters correctly`;
-    }
-
-    
-  });
-
-  function mixtheArray(arrayword) {
-    for (let i = 0; i < arrayword.length - 1; i++) {
-      const Randomindex = Math.floor(Math.random() * arrayword.length);
-      //Destructuring assignment
-      [arrayword[i], arrayword[Randomindex]] = [
-        arrayword[Randomindex],
-        arrayword[i],
-      ];
-    }
+function startGame() {
+  if (webProgrammingwordsCopy.length === 0) {
+    score.innerHTML = `Congratulations! You guessed all the words!`;
+    return;
   }
-  //This converts the array into a single string without any commas or spaces between the characters.
+  RandomWord =
+    webProgrammingwordsCopy[
+      Math.floor(Math.random() * webProgrammingwordsCopy.length)
+    ];
+  arrayword = RandomWord.split("");
+  mixtheArray(arrayword);
   scramble.innerHTML = arrayword.join(" ").toLowerCase();
+  input.value = "";
+}
+
+reTry.addEventListener("click", startGame);
+
+checkButton.addEventListener("click", () => {
+  let inputValue = input.value.toLowerCase().split("");
+  let arrayword = RandomWord.toLowerCase().split("");
+
+  
+  // Check if the input matches the word
+  if (
+    inputValue.join('') === arrayword.join('')
+  ) {
+    // Word guessed correctly for the first time
+    console.log(inputValue)
+    console.log(arrayword);
+    wordsYouKnew++;
+    webProgrammingwordsCopy = webProgrammingwordsCopy.filter(
+      (word) => word !== RandomWord
+    );
+    // Update the score
+    score.innerHTML = `You knew ${wordsYouKnew} word(s) from ${webProgrammingwords.length} words correctly!`;
+
+    // Move to the next word
+    startGame();
+  }
+  else{
+    score.innerHTML = `Try again!`;
+  }
+});
+
+function mixtheArray(arrayword) {
+  for (let i = 0; i < arrayword.length - 1; i++) {
+    const Randomindex = Math.floor(Math.random() * arrayword.length);
+    //Destructuring assignment
+    [arrayword[i], arrayword[Randomindex]] = [
+      arrayword[Randomindex],
+      arrayword[i],
+    ];
+  }
+}
+
+startGame();
