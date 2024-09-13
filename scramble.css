@@ -1,0 +1,27 @@
+
+
+input{
+    width: 400px;
+    height: 30px;
+    font-size: 20px;
+}
+
+.checkButton{
+    background: hsl(101, 91%, 13%);
+    cursor: pointer;
+    border: none;
+    color: white;
+    height: 36px;
+    width: 80px;
+    font-size: 15px;
+}
+
+.restart{
+    background: hsl(248, 94%, 49%);
+    cursor: pointer;
+    border: none;
+    color: white;
+    height: 36px;
+    width: 80px;
+    font-size: 15px;
+}
