@@ -1,6 +1,6 @@
 let input = document.querySelector("input");
 let checkButton = document.querySelector(".checkButton");
-let reStartButton = document.querySelector(".restart");
+let reTry = document.querySelector(".retry");
 let header = document.querySelector("h2");
 let scramble = document.querySelector(".srambleWord");
 let score = document.querySelector(".score");
@@ -70,14 +70,12 @@ let webProgrammingwords = [
   "CSRF",
 ];
 
-
-document.addEventListener("DOMContentLoaded", () => {
-  let webProgrammingwordsCopy=[...webProgrammingwords]
+  let webProgrammingwordsCopy=[...webProgrammingwords];
   let RandomWord = webProgrammingwordsCopy[Math.floor(Math.random() * webProgrammingwords.length)];
 
   let arrayword = RandomWord.split("");
 
-  reStartButton.addEventListener("click", () => {
+  reTry.addEventListener("click", () => {
     score.innerHTML=""
     let word =
       webProgrammingwords[
@@ -120,4 +118,3 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   //This converts the array into a single string without any commas or spaces between the characters.
   scramble.innerHTML = arrayword.join(" ").toLowerCase();
-});
