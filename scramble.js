@@ -101,9 +101,6 @@ checkButton.addEventListener("click", () => {
   if (
     inputValue.join('') === arrayword.join('')
   ) {
-    // Word guessed correctly for the first time
-    console.log(inputValue)
-    console.log(arrayword);
     wordsYouKnew++;
     webProgrammingwordsCopy = webProgrammingwordsCopy.filter(
       (word) => word !== RandomWord
