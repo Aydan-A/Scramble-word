@@ -8,14 +8,15 @@
     <script src="scramble.js" defer></script>
 </head>
 <body>
-    <h2>How many words about web programming can you guess?</h2>
-    <p class="score"></p>
-    <p class="srambleWord"></p>
-    <div>
-        <input type="text" name="" id="">
-        <button type="submit" class="checkButton">Check</button>
+    <div class="container">
+        <h2>How many words related to web programming can you guess?</h2>
+        <p class="score">You haven't started yet!</p>
+        <p class="scrambleWord"></p>
+        <div class="input-section">
+            <input type="text" placeholder="Type your guess here..." id="word-input">
+            <button type="submit" class="checkButton">Check</button>
+        </div>
+        <button type="submit" class="retry">ReTry</button>
     </div>
-    <button type="submit" class="retry">ReTry</button>
-    
 </body>
 </html>

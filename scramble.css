@@ -1,27 +1,106 @@
-
-
-input{
-    width: 400px;
-    height: 30px;
-    font-size: 20px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.checkButton{
-    background: hsl(101, 91%, 13%);
+body {
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.score {
+    color: #007bff;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.scrambleWord {
+    font-size: 22px;
+    font-weight: bold;
+    color: #555;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.input-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 60%;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.checkButton {
+    background-color: #28a745;
     cursor: pointer;
     border: none;
     color: white;
-    height: 36px;
-    width: 80px;
-    font-size: 15px;
+    height: 40px;
+    padding: 0 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.retry{
-    background: hsl(248, 94%, 49%);
+.checkButton:hover {
+    background-color: #218838;
+}
+
+.retry {
+    background-color: #ffc107;
     cursor: pointer;
     border: none;
     color: white;
-    height: 36px;
-    width: 80px;
-    font-size: 15px;
+    height: 40px;
+    padding: 0 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.retry:hover {
+    background-color: #e0a800;
+}
+
+@media (max-width: 600px) {
+    input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .input-section {
+        flex-direction: column;
+    }
+    .checkButton {
+        width: 100%;
+    }
 }
