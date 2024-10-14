@@ -21,7 +21,6 @@ A fun and interactive word scramble game built using HTML, CSS, and JavaScript. 
 
    ```bash
    git clone https://github.com/Aydan-A/Scramble-word.git
-   cd word-scramble
 
 ## Contributing
 Contributions are welcome! If you find any bugs or have suggestions for improvements, feel free to open an issue or submit a pull request.
